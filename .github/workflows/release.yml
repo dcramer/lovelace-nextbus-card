@@ -14,7 +14,7 @@ jobs:
       # Build
       - name: Build the file
         run: |
-          cd /home/runner/work/nextbus-card/nextbus-card
+          cd /home/runner/work/lovelace-nextbus-card/lovelace-nextbus-card
           npm install
           npm run build
 
@@ -24,7 +24,7 @@ jobs:
 
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: /home/runner/work/nextbus-card/nextbus-card/dist/nextbus-card.js
+          file: /home/runner/work/lovelace-nextbus-card/lovelace-nextbus-card/dist/nextbus-card.js
           asset_name: nextbus-card.js
           tag: ${{ github.ref }}
           overwrite: true
