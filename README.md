@@ -1,5 +1,9 @@
 # NextBus Card
 
+A card which displays multiple public transit routes using the [NextBus sensors](https://www.home-assistant.io/integrations/nextbus/). This improves on a generic entity display making it appear more akin to a mobile phone widget, giving you more than just the next route's countdown.
+
+![Screenshot](/screenshot.png?raw=true 'Example Card')
+
 [![GitHub Release][releases-shield]][releases]
 [![License][license-shield]](LICENSE.md)
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
