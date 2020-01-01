@@ -41,17 +41,3 @@ If you need a fresh test instance you can install a fresh Home Assistant instanc
 
 1. Run the command `dc start`.
 2. Home Assistant will install and will eventually be running on port `9123`
-
-## [Troubleshooting](https://github.com/thomasloven/hass-config/wiki/Lovelace-Plugins)
-
-[commits-shield]: https://img.shields.io/github/commit-activity/y/custom-cards/boilerplate-card.svg?style=for-the-badge
-[commits]: https://github.com/custom-cards/boilerplate-card/commits/master
-[devcontainer]: https://code.visualstudio.com/docs/remote/containers
-[discord]: https://discord.gg/5e9yvq
-[discord-shield]: https://img.shields.io/discord/330944238910963714.svg?style=for-the-badge
-[forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg?style=for-the-badge
-[forum]: https://community.home-assistant.io/c/projects/frontend
-[license-shield]: https://img.shields.io/github/license/custom-cards/boilerplate-card.svg?style=for-the-badge
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2019.svg?style=for-the-badge
-[releases-shield]: https://img.shields.io/github/release/custom-cards/boilerplate-card.svg?style=for-the-badge
-[releases]: https://github.com/custom-cards/boilerplate-card/releases
