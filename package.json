@@ -11,7 +11,7 @@
     "custom-cards"
   ],
   "module": "nextbus-card.js",
-  "repository": "git@github.com:dcramer/lovelace-nextbusplate-card.git",
+  "repository": "git@github.com:dcramer/lovelace-nextbus-card.git",
   "author": "David Cramer <dcramer@gmail.com>",
   "license": "MIT",
   "dependencies": {
