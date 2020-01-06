@@ -62,6 +62,18 @@ export class NextBusCard extends LitElement {
     return `${attributes.route.replace(/-/g, ' ')} ${isInbound ? 'Inbound' : 'Outbound'}`;
   }
 
+  protected minutesUntil(target: number, now: number, defaultValue = ''): string {
+    if (target < now) return defaultValue;
+
+    const timeDelta = Math.abs(target - now);
+    let minutes = Math.ceil(timeDelta / (1000 * 604));
+    if (target < now) {
+      minutes = -minutes;
+    }
+    if (minutes === 0) return 'now';
+    return `${minutes} min${minutes > 1 ? 's' : ''}`;
+  }
+
   protected render(): TemplateResult | void {
     if (!this._config || !this.hass) {
       return html``;
@@ -81,7 +93,13 @@ export class NextBusCard extends LitElement {
               `;
             }
 
-            const upcoming = stateObj.attributes.upcoming.split(',').map(v => v.replace(/\s/g, ''));
+            const last_updated_ts = new Date(stateObj.last_updated).getTime();
+
+            const upcoming = stateObj.attributes.upcoming
+              .split(',')
+              .map(v => last_updated_ts + parseInt(v.replace(/\s/g, ''), 10) * 60 * 1000);
+
+            const now_ts = new Date().getTime();
 
             return html`
               <div class="flex">
@@ -93,8 +111,8 @@ export class NextBusCard extends LitElement {
                   <div class="routeStop"><ha-icon icon="mdi:map-marker"></ha-icon> ${stateObj.attributes.stop}</div>
                 </div>
                 <div class="upcoming">
-                  <div class="nextTime">${upcoming.length ? `${upcoming[0]} min` : 'n/a'}</div>
-                  <div class="afterTime">${upcoming.length > 1 ? `${upcoming[1]} min` : ''}</div>
+                  <div class="nextTime">${upcoming.length ? this.minutesUntil(upcoming[0], now_ts, 'n/a') : 'n/a'}</div>
+                  <div class="afterTime">${upcoming.length > 1 ? this.minutesUntil(upcoming[1], now_ts) : ''}</div>
                 </div>
               </div>
             `;
