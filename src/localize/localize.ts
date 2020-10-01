@@ -1,7 +1,9 @@
 import * as en from './languages/en.json';
+import * as en from './languages/nb.json';
 
 const languages = {
   en,
+  nb,
 };
 
 export function localize(string: string, search = '', replace = ''): string {
